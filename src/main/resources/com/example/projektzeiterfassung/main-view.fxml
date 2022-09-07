@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projektzeiterfassung.MainController">
+   <children>
+      <HBox maxHeight="0.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" maxHeight="30.0" minWidth="120.0" text="Projekt Nummer">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="projectTextField" minWidth="200.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox maxHeight="0.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" maxHeight="30.0" minWidth="120.0" text="Arbeitspaket">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="paketTextField" minWidth="200.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox maxHeight="0.0" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" maxHeight="30.0" minWidth="120.0" text="Mitarbeiter">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="employeeTextField" minWidth="200.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <Label fx:id="errorLabel" opacity="0.0" text="Error" textFill="#830000">
+         <VBox.margin>
+            <Insets left="130.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <HBox maxHeight="0.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="timerButton" mnemonicParsing="false" onAction="#onStartTimerButton" text="Start Timer">
+               <HBox.margin>
+                  <Insets left="120.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="timeLabel" alignment="CENTER" prefHeight="80.0" prefWidth="300.0" text="--:--" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
+            <AnchorPane onMouseClicked="#onFinishTimeClicked" prefHeight="200.0" prefWidth="300.0">
+               <children>
+                  <Label fx:id="stoppedTimeLabel" alignment="CENTER" layoutY="10.0" opacity="0.0" prefHeight="80.0" prefWidth="150.0" text="--:--" textAlignment="CENTER">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="projectLabel" layoutX="150.0" layoutY="14.0" />
+                  <Label fx:id="paketLabel" layoutX="150.0" layoutY="42.0" />
+                  <Label fx:id="employeeLabel" layoutX="150.0" layoutY="69.0" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>
